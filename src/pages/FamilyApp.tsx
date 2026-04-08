@@ -305,13 +305,23 @@ export default function FamilyApp() {
               )}
 
               {activeTab === "respira" && (
-                <div className="min-h-full flex flex-col items-center justify-center p-6 text-white relative">
-                  <div className="absolute top-8 text-center w-full px-6">
+                <div className="min-h-full flex flex-col items-center justify-center p-6 text-white relative overflow-hidden">
+                  {/* Video Background */}
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
+                  >
+                    <source src="https://videos.pexels.com/video-files/3571373/3571373-sd_640_360_30fps.mp4" type="video/mp4" />
+                  </video>
+
+                  <div className="absolute top-8 text-center w-full px-6 z-20">
                     <h2 className="font-heading text-2xl text-white/90">Respira</h2>
                     <p className="text-white/60 text-sm mt-1">Sigue el círculo</p>
                   </div>
 
-                  <div className="relative w-64 h-64 flex items-center justify-center mt-12">
+                  <div className="relative w-64 h-64 flex items-center justify-center mt-12 z-10">
                     <motion.div
                       animate={{ scale: [0.6, 1.4, 1.4, 0.6, 0.6] }}
                       transition={{ duration: 16, repeat: Infinity, times: [0, 0.25, 0.5, 0.75, 1], ease: "easeInOut" }}
@@ -327,7 +337,7 @@ export default function FamilyApp() {
                     <span className="relative z-10 font-instruction text-2xl tracking-widest text-white">{breathingPhase}</span>
                   </div>
 
-                  <div className="absolute bottom-32 w-full px-6 text-center">
+                  <div className="absolute bottom-32 w-full px-6 text-center z-20">
                     <p className="text-white/60 text-sm mb-4">¿Cómo te sientes hoy?</p>
                     <div className="flex justify-center gap-4">
                       {['😭', '😢', '😐', '🙂', '😄'].map((emoji) => (
@@ -469,7 +479,7 @@ export default function FamilyApp() {
             </button>
             <button 
               onClick={() => { setActiveTab("gallery"); setSubView(null); }}
-              className={`flex flex-col items-center p-2 min-w-[64px] ${activeTab === "gallery" && !subView ? "text-ronald-red" : "text-gray-400"}`}
+              className={`flex flex-col items-center p-2 min-w-[64px] hidden ${activeTab === "gallery" && !subView ? "text-ronald-red" : "text-gray-400"}`}
             >
               <BookOpen className="w-6 h-6" />
               <span className="text-[11px] mt-1 font-medium">Galería</span>
