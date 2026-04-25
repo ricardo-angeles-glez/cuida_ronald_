@@ -1,27 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&family=Lato:wght@300;400&family=Nunito:wght@400;600;700;800&family=Sora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-ronald-red: #C8102E;
-  --color-ronald-yellow: #FFC72C;
-  --color-ronald-teal: #007A87;
-  --color-ronald-orange: #E8521A;
-  --color-ronald-blue: #1565C0;
-  --color-ronald-dark: #1A1A1A;
-  --color-ronald-gray: #F5F5F5;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
 
-  --font-heading: "Nunito", sans-serif;
-  --font-body: "Inter", "DM Sans", sans-serif;
-  --font-numbers: "Sora", sans-serif;
-  --font-instruction: "Lato", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--color-ronald-dark);
-  background-color: var(--color-ronald-gray);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
+  background-color: #0a0a0a;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
